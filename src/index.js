@@ -1,3 +1,4 @@
+import React from "react"
 import ReactDOM from "react-dom/client"
 // IMPORT CSS FILE TO BE SOURCE OF STYLING
 import "./index.css"

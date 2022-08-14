@@ -1,3 +1,4 @@
+import React from "react"
 import { useEffect, useState } from "react"
 import { HashRouter as Routes, Route } from "react-router-dom"
 import Index from "../pages/Index"
