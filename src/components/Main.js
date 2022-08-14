@@ -52,7 +52,7 @@ function Main(props) {
     }, [])
 
   return (
-    <main>
+    <HashRouter>
         <Routes>
             <Route exact path="/" element={<Index culture={culture} />} />
             <Route path="/culture/:id" element={<Show culture={culture}
@@ -61,7 +61,7 @@ function Main(props) {
             <Route path="/create" element={<Create createCulture={createCulture}  />} />
             <Route path="/update/:id" element={<Update culture={culture} updateCulture={updateCulture} />} />
         </Routes>
-    </main>
+    </HashRouter>
   )
 }
 
