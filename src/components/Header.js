@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import React from 'react'
 
 function Header(props) {
   //inline style for the nav tag
