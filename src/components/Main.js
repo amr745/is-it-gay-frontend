@@ -1,6 +1,6 @@
 import React from "react"
 import { useEffect, useState } from "react"
-import { HashRouter, Routes, Route } from "react-router-dom"
+import { Routes, Route } from "react-router-dom"
 import Index from "../pages/Index"
 import Show from "../pages/Show"
 import About from "../pages/About"
@@ -53,7 +53,7 @@ function Main(props) {
     }, [])
 
   return (
-    <HashRouter>
+    <main>
         <Routes>
             <Route exact path="/" element={<Index culture={culture} />} />
             <Route path="/culture/:id" element={<Show culture={culture}
@@ -62,7 +62,7 @@ function Main(props) {
             <Route path="/create" element={<Create createCulture={createCulture}  />} />
             <Route path="/update/:id" element={<Update culture={culture} updateCulture={updateCulture} />} />
         </Routes>
-    </HashRouter>
+    </main>
   )
 }
 
