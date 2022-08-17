@@ -109,7 +109,7 @@ footer {
   #main-container {
     /* position: absolute; */
     place-items: center center;
-    margin-top: 20px;
+    margin-top: 10px;
   }
 
   #sign-in-form {
