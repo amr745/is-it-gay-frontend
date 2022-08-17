@@ -8,7 +8,7 @@ function Footer(props) {
       <p className="footer-rights">IIG All Right Reserved®</p>
       <div className="footer-icons">
         <a href="https://www.linkedin.com/in/ashleymrichard1" className="social-link" alt="Link/edin Link"><FaLinkedinIn size ={20}/></a>
-        <a href="https://github.com/amr745" className="social-link" alt="Github Link"><FaGithub size ={20}/></a>
+        <a href="https://github.com/amr745/isitgay" className="social-link" alt="Github Link"><FaGithub size ={20}/></a>
       </div>
     </footer>
   )

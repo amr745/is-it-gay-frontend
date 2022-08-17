@@ -17,10 +17,6 @@
 
 }
 
-/* body { 
-  background-image: linear-gradient(to right, #FFCC00, #00CD00, rgb(116, 49, 162));
-} */
-
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -109,3 +105,28 @@ footer {
   .btn {
     background-image: linear-gradient(to right, #7431A2, #FF689F, #FFCC00, rgb(0, 205, 0));
   }
+
+  #main-container {
+    /* position: absolute; */
+    place-items: center center;
+    margin-top: 175px;
+  }
+
+  #sign-in-form {
+    max-width: 330px;
+  }
+
+  .bootstrap-logo {
+    /* width: px; */
+    height: 72px;
+  }
+
+  .form-control:focus {
+    z-index: 5;
+  }
+
+  .form-box {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}

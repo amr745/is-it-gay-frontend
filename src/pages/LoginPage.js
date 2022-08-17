@@ -1,8 +1,8 @@
 import React from "react"
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Button, Container, Form } from "react-bootstrap";
+import { Link, useNavigate } from "react-router-dom";
 import { login } from "../services/register";
-
 
 function LoginPage({ handleRegisterOrLogin, updateMessage }) {
     const [formState, setFormState] = useState({
@@ -33,44 +33,34 @@ function LoginPage({ handleRegisterOrLogin, updateMessage }) {
     }
 
     return (
-        <div className="auth-form">
-            <form onSubmit={handleSubmit}>
-                <h3>Login</h3>
-                <div className="mb-3">
-                    <label>Email address</label>
-                    <input
-                        type="email"
-                        className="form-control"
-                        placeholder="Enter email"
-                        value={formState.email}
-                        name="email"
-                        onChange={handleChange}
-                    />
-                </div>
-                <div className="mb-3">
-                    <label>Password</label>
-                    <input
-                        type="password"
-                        className="form-control"
-                        placeholder="Enter password"
-                        value={formState.password}
-                        name="password"
-                        onChange={handleChange}
-                    />
-                </div>
-
-                <div className="d-grid">
-                    <button type="submit" className="btn btn-primary">
-                        Login
-                    </button>
-                </div>
-                <p className="forgot-password text-right">
-                    Not a member? <a href="/register">Sign-up now!</a>
-                </p>
-            </form>
-
-        </div>
-    );
+            // <div className="form-box">
+        <Container id="main-container" className="d-grid h-100">
+        <Form id="sign-in-form" onSubmit={handleSubmit}>
+            <img className="mb-4 bootstrap-logo" 
+              src="https://imgur.com/1vfKBtj.png" 
+              alt="Is it Gay Logo" />
+          <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Label>Email address</Form.Label>
+            <Form.Control type="email" placeholder="Enter email" defaultValue={formState.email} name="email" onChange={handleChange} />
+            <Form.Text className="text-muted">
+              We'll never share your email with anyone else.
+            </Form.Text>
+          </Form.Group>
+    
+          <Form.Group className="mb-3" controlId="formBasicPassword">
+            <Form.Label>Password</Form.Label>
+            <Form.Control type="password" placeholder="Password" defaultValue={formState.password} name="password" onChange={handleChange} />
+            <Form.Text className="forgot-password text-right">
+               Not a member? <Link to="/register">Sign-up now!</Link>
+            </Form.Text>
+          </Form.Group>
+          <Button variant="primary" type="submit">
+            Login
+          </Button>
+        </Form>
+        </Container>
+        // </div>
+      );
 }
 
 export default LoginPage;
