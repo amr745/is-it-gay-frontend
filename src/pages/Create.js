@@ -1,8 +1,7 @@
 import React from "react"
 import { useState } from "react"
+import { Button, Container, Form } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
-
-import { Link } from "react-router-dom"
 
 function Create(props) {
     const navigate = useNavigate();
@@ -30,58 +29,33 @@ function Create(props) {
         })
         navigate('/');
     }
+        return (
+        <Container id="main-container" className="d-grid h-100">
+        <Form id="sign-in-form" onSubmit={handleSubmit}>
+            <img className="mb-4 bootstrap-logo" 
+              src="https://imgur.com/1vfKBtj.png" 
+              alt="Is it Gay Logo" />
+                <Form.Group className="mb-3" controlId="formBasicName">
+            <Form.Label>Add New Content</Form.Label>
+            <Form.Control type="text" placeholder="Content Name" defaultValue={newForm.name} name="name" onChange={handleChange} required />
+
+          </Form.Group>
+          <Form.Group className="mb-3" controlId="formBasicDescription">
+            <Form.Control as="textarea" rows="5" placeholder="Description" defaultValue={newForm.description} name="description" onChange={handleChange} />
+          </Form.Group>
     
-    // loaded function
-    const loaded = () => {
-        return props.culture.map((cult) => (
-        <div key={cult._id} className="cult">
-            <Link to={`/culture/${cult._id}`}>
-                <h1>{cult.name}</h1>
-            </Link>
-                <img src={cult.url} alt={cult.name} />
-        </div>
-        ))
-    }
-            
-    const loading = () => {
-        return <h1>Loading...</h1>
-    }
-            
-    return (
-        <section>
-            <form onSubmit={handleSubmit}>
-                <input
-                    type="text"
-                    value={newForm.name}
-                    name="name"
-                    placeholder="name"
-                    onChange={handleChange}
-                />
-                <input
-                    type="text"
-                    value={newForm.description}
-                    name="description"
-                    placeholder="description"
-                    onChange={handleChange}
-                />
-                <input
-                    type="text"
-                    value={newForm.reason}
-                    name="reason"
-                    placeholder="reason"
-                    onChange={handleChange}
-                />
-                <input
-                    type="text"
-                    value={newForm.url}
-                    name="url"
-                    placeholder="image URL"
-                    onChange={handleChange}
-                />
-                <input type="submit" value="Add Content" />
-            </form>
-            {props.culture ? loaded() : loading()}
-        </section>
+          <Form.Group className="mb-3" controlId="formBasicReason">
+            <Form.Control as="textarea" rows="5" placeholder="Tell Us Why It's Gay!" defaultValue={newForm.reason} name="reason" onChange={handleChange} />
+          </Form.Group>
+
+          <Form.Group className="mb-3" controlId="formBasicURL">
+            <Form.Control type="text" placeholder="Image URL" defaultValue={newForm.url} name="url" onChange={handleChange} />
+          </Form.Group>
+          <Button variant="primary" type="submit">
+            Submit Content
+          </Button>
+        </Form>
+        </Container>
     )
 }
   

@@ -41,13 +41,9 @@ function LoginPage({ handleRegisterOrLogin, updateMessage }) {
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Login</Form.Label>
             <Form.Control type="email" placeholder="Enter email" defaultValue={formState.email} name="email" onChange={handleChange} />
-            <Form.Text className="text-muted">
-              We'll never share your email with anyone else.
-            </Form.Text>
           </Form.Group>
     
           <Form.Group className="mb-3" controlId="formBasicPassword">
-            <Form.Label>Password</Form.Label>
             <Form.Control type="password" placeholder="Password" defaultValue={formState.password} name="password" onChange={handleChange} />
             <Form.Text className="forgot-password text-right">
                Not a member? <Link to="/register">Sign-up now!</Link>

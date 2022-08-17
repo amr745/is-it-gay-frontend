@@ -37,35 +37,6 @@ function Index(props) {
       </div>
     )
   }
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-//       <div className="card" key={cult._id}>
-//       <Card style={{ width: '18rem' }}>
-//       <Card.Img variant="top" src={cult.url} />
-//       <Card.Body>
-//         <Card.Title>{cult.name}</Card.Title>
-//         <Card.Text>{cult.reason}</Card.Text>
-//         <p onClick={increment}>
-//           <span>👍</span>
-//           <span>{cult.vote || count}</span>
-//         </p>
-//         <a href={`/culture/${cult._id}`} className="btn btn-primary">Go somewhere</a>
-//       </Card.Body>
-//     </Card>
-//     </div>
-//   ))
-// }
 
   const loading = () => {
     return <h1>Loading...</h1>

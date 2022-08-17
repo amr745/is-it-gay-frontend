@@ -48,7 +48,7 @@ function RegisterForm({ updateMessage, handleRegisterOrLogin }) {
             <img className="mb-4 bootstrap-logo" 
               src="https://imgur.com/1vfKBtj.png" 
               alt="Is it Gay Logo" />
-                <Form.Group className="mb-3" controlId="formBasicEmail">
+                <Form.Group className="mb-3" controlId="formBasicName">
             <Form.Label>Signup</Form.Label>
             <Form.Control type="text" placeholder="Enter Name" defaultValue={formState.name} name="name" onChange={handleChange} />
 
@@ -68,10 +68,10 @@ function RegisterForm({ updateMessage, handleRegisterOrLogin }) {
             </Form.Text><br/>
 
             <Form.Text className="forgot-password text-right">
-            Already registered? <Link to="/login">Signin</Link>
+            Already registered? <Link to="/login">Login</Link>
             </Form.Text>
           </Form.Group>
-          <Button variant="primary" type="submit">
+          <Button variant="primary" type="submit" disabled={validForm()}>
             Login
           </Button>
         </Form>
