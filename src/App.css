@@ -122,3 +122,8 @@ footer {
   .form-control:focus {
     z-index: 5;
   }
+
+  .show-image {
+    /* width: 300px; */
+    height: 300px;
+  }

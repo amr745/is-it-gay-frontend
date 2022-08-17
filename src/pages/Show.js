@@ -19,7 +19,7 @@ const updateCult = () => {
 return (
     <div className="cult">
       <h1>{cult.name}</h1>
-      <img src={cult.url} alt={cult.name} />
+      <img className="show-image" src={cult.url} alt={cult.name} />
       <h2>{cult.description}</h2>
       <h2>{cult.reason}</h2>
       <button id="delete" onClick={removeCult}>
