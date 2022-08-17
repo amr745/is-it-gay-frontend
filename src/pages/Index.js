@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { Col, Container, Row } from "react-bootstrap";
-// import { Link } from "react-router-dom"
+import { Link } from "react-router-dom"
 // import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
@@ -27,7 +27,7 @@ function Index(props) {
                                   <span alt="thumbs up emoji">👍</span>
                                   <span>{cult.vote || count}</span>
                                 </p>
-                                <a style={{}}href={`/#/culture/${cult._id}`} className="btn btn-primary">Why it's Gay!</a>
+                                <Link to={`/culture/${cult._id}`}><button className="btn btn-primary">Why It's Gay?</button></Link>
                             </Card.Body>
                         </Card>
                     </Col>
