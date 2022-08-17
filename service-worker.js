@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/isitgay/precache-manifest.b49e3893bd966618640740e28b618803.js"
+  "/isitgay/precache-manifest.9626a705ec572fd8ee549bde69b5c708.js"
 );
 
 workbox.clientsClaim();

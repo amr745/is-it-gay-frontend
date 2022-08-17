@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "38cef105263a35adc68d",
-    "url": "/isitgay/static/css/main.91298df1.chunk.css"
+    "revision": "a92102493640dd30dfa6",
+    "url": "/isitgay/static/css/main.ed7e0451.chunk.css"
   },
   {
-    "revision": "38cef105263a35adc68d",
-    "url": "/isitgay/static/js/main.38cef105.chunk.js"
+    "revision": "a92102493640dd30dfa6",
+    "url": "/isitgay/static/js/main.a9210249.chunk.js"
   },
   {
     "revision": "2e8f1a6b9f28a667d85d",
@@ -24,7 +24,7 @@ self.__precacheManifest = [
     "url": "/isitgay/static/js/runtime~main.c74d65bc.js"
   },
   {
-    "revision": "5f8871c4b037d241453cbb8fe4799462",
+    "revision": "0f002647ceca59edfc1ba0df07fa2994",
     "url": "/isitgay/index.html"
   }
 ];
