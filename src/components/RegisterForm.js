@@ -1,7 +1,9 @@
 import React from "react"
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Button, Container, Form } from "react-bootstrap";
+import { Link, useNavigate } from "react-router-dom";
 import { register } from "../services/register";
+
 
 function RegisterForm({ updateMessage, handleRegisterOrLogin }) {
     const [formState, setFormState] = useState({
@@ -41,67 +43,111 @@ function RegisterForm({ updateMessage, handleRegisterOrLogin }) {
     }
 
     return (
-        <div className="auth-form">
-            <form onSubmit={handleSubmit}>
-                <h3>Sign Up</h3>
-                <div className="mb-3">
-                    <label>Name</label>
-                    <input
-                        type="text"
-                        className="form-control"
-                        placeholder="Enter Name"
-                        value={formState.name}
-                        name="name"
-                        onChange={handleChange}
-                    />
-                </div>
-                <div className="mb-3">
-                    <label>Email address</label>
-                    <input
-                        type="email"
-                        className="form-control"
-                        placeholder="Enter email"
-                        value={formState.email}
-                        name="email"
-                        onChange={handleChange}
-                        required
-                    />
-                </div>
-                <div className="mb-3">
-                    <label>Password</label>
-                    <input
-                        type="password"
-                        className="form-control"
-                        placeholder="Enter password"
-                        value={formState.password}
-                        name="password"
-                        onChange={handleChange}
-                        required
-                    />
-                </div>
-                <div className="mb-3">
-                    <input
-                        type="password"
-                        className="form-control"
-                        placeholder="Confirm password"
-                        value={formState.passwordConf}
-                        name="passwordConf"
-                        onChange={handleChange}
-                        required
-                    />
-                </div>
-                <div className="d-grid">
-                    <button type="submit" className="btn btn-primary" disabled={validForm()}>
-                        Sign Up
-                    </button>
-                </div>
-                <p className="forgot-password text-right">
-                    Already registered? <a href="/login">Signin</a>
-                </p>
-            </form>
+        <Container id="main-container" className="d-grid h-100">
+        <Form id="sign-in-form" onSubmit={handleSubmit}>
+            <img className="mb-4 bootstrap-logo" 
+              src="https://imgur.com/1vfKBtj.png" 
+              alt="Is it Gay Logo" />
+                <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Label>Signup</Form.Label>
+            <Form.Control type="text" placeholder="Enter Name" defaultValue={formState.name} name="name" onChange={handleChange} />
 
-        </div>
-    );
+          </Form.Group>
+          <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Control type="email" placeholder="Enter Email" defaultValue={formState.email} name="email" onChange={handleChange} required/>
+          </Form.Group>
+    
+          <Form.Group className="mb-3" controlId="formBasicPassword">
+            <Form.Control type="password" placeholder="Enter Password" defaultValue={formState.password} name="password" onChange={handleChange} required />
+          </Form.Group>
+
+          <Form.Group className="mb-3" controlId="formBasicPassword">
+            <Form.Control type="password" placeholder="Confirm Password" defaultValue={formState.passwordConf} name="passwordConf" onChange={handleChange} required />
+            <Form.Text className="text-muted">
+              We'll never share your email with anyone.
+            </Form.Text><br/>
+
+            <Form.Text className="forgot-password text-right">
+            Already registered? <Link to="/login">Signin</Link>
+            </Form.Text>
+          </Form.Group>
+          <Button variant="primary" type="submit">
+            Login
+          </Button>
+        </Form>
+        </Container>
+    )
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    //     <div className="auth-form">
+    //         <form onSubmit={handleSubmit}>
+    //             <h3>Sign Up</h3>
+    //             <div className="mb-3">
+    //                 <label>Name</label>
+    //                 <input
+    //                     type="text"
+    //                     className="form-control"
+    //                     placeholder="Enter Name"
+    //                     value={formState.name}
+    //                     name="name"
+    //                     onChange={handleChange}
+    //                 />
+    //             </div>
+    //             <div className="mb-3">
+    //                 <label>Email address</label>
+    //                 <input
+    //                     type="email"
+    //                     className="form-control"
+    //                     placeholder="Enter email"
+    //                     value={formState.email}
+    //                     name="email"
+    //                     onChange={handleChange}
+    //                     required
+    //                 />
+    //             </div>
+    //             <div className="mb-3">
+    //                 <label>Password</label>
+    //                 <input
+    //                     type="password"
+    //                     className="form-control"
+    //                     placeholder="Enter password"
+    //                     value={formState.password}
+    //                     name="password"
+    //                     onChange={handleChange}
+    //                     required
+    //                 />
+    //             </div>
+    //             <div className="mb-3">
+    //                 <input
+    //                     type="password"
+    //                     className="form-control"
+    //                     placeholder="Confirm password"
+    //                     value={formState.passwordConf}
+    //                     name="passwordConf"
+    //                     onChange={handleChange}
+    //                     required
+    //                 />
+    //             </div>
+    //             <div className="d-grid">
+    //                 <button type="submit" className="btn btn-primary" disabled={validForm()}>
+    //                     Sign Up
+    //                 </button>
+    //             </div>
+    //             <p className="forgot-password text-right">
+    //                 Already registered? <a href="/login">Signin</a>
+    //             </p>
+    //         </form>
+
+    //     </div>
+    // );
 }
 
 export default RegisterForm;

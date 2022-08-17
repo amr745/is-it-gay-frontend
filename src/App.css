@@ -107,7 +107,6 @@ footer {
   }
 
   #main-container {
-    /* position: absolute; */
     place-items: center center;
     margin-top: 10px;
   }
@@ -117,16 +116,9 @@ footer {
   }
 
   .bootstrap-logo {
-    /* width: px; */
     height: 72px;
   }
 
   .form-control:focus {
     z-index: 5;
   }
-
-  .form-box {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-}

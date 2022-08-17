@@ -33,14 +33,13 @@ function LoginPage({ handleRegisterOrLogin, updateMessage }) {
     }
 
     return (
-            // <div className="form-box">
         <Container id="main-container" className="d-grid h-100">
         <Form id="sign-in-form" onSubmit={handleSubmit}>
             <img className="mb-4 bootstrap-logo" 
               src="https://imgur.com/1vfKBtj.png" 
               alt="Is it Gay Logo" />
           <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label>Email address</Form.Label>
+            <Form.Label>Login</Form.Label>
             <Form.Control type="email" placeholder="Enter email" defaultValue={formState.email} name="email" onChange={handleChange} />
             <Form.Text className="text-muted">
               We'll never share your email with anyone else.
@@ -59,7 +58,6 @@ function LoginPage({ handleRegisterOrLogin, updateMessage }) {
           </Button>
         </Form>
         </Container>
-        // </div>
       );
 }
 
