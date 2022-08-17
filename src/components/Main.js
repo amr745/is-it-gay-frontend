@@ -7,7 +7,7 @@ import About from "../pages/About"
 import Create from "../pages/Create"
 import Update from "../pages/Update"
 import RegisterPage from "../pages/RegisterPage"
-import LoginPage from "../pages/LoginPage";
+import LoginPage from "../pages/LoginPage"
 
 function Main(props) {
     const [culture, setCulture] = useState(null)
@@ -59,7 +59,7 @@ function Main(props) {
         <Routes>
             <Route path="/register" element={<RegisterPage {...props} />} />
             <Route path="/login" element={<LoginPage {...props} />} />
-            <Route exact path="/" element={<Index culture={culture} />} />
+            <Route exact path="/" element={<Index culture={culture} updateCulture={updateCulture} />} />
             <Route path="/culture/:id" element={<Show culture={culture} deleteCulture={deleteCulture} updateCulture={updateCulture}  />} />
             <Route path="/about" element={<About />} />
             <Route path="/create" element={<Create createCulture={createCulture}  />} />

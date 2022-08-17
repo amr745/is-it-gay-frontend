@@ -1,17 +1,69 @@
-import React from "react"
-import { Link } from "react-router-dom"
+import React, { useState } from "react"
+import { Col, Container, Row } from "react-bootstrap";
+// import { Link } from "react-router-dom"
+// import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
 
 function Index(props) {
-  const loaded = () => {
-    return props.culture.map((cult) => (
-      <div key={cult._id} className="cult">
-        <Link to={`/culture/${cult._id}`}>
-          <h1>{cult.name}</h1>
-        </Link>
-        <img src={cult.url} alt={cult.name} />
-      </div>
-    ))
+  const [count, setCount] = useState(0)
+  
+  const increment = () => {
+    setCount(count + 1)
   }
+  
+  const loaded = () => {
+    return (
+      <Container>
+            <Row>
+                {props.culture.map((cult) => (
+                    <Col key={cult._id} xs={12} md={4} lg={3}>
+                        <Card style={{ width: '18rem' }}>
+                            <Card.Img src={cult.url} />
+                            <Card.Body>
+                                <Card.Title>{cult.name}</Card.Title>
+                                <Card.Text>{cult.description}</Card.Text>
+                                <p onClick={increment}>
+                                  <span alt="thumbs up emoji">👍</span>
+                                  <span>{cult.vote || count}</span>
+                                </p>
+                                <a style={{}}href={`/#/culture/${cult._id}`} className="btn btn-primary">Why it's Gay!</a>
+                            </Card.Body>
+                        </Card>
+                    </Col>
+                ))}
+            </Row>
+        </Container>
+    )
+  }
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+//       <div className="card" key={cult._id}>
+//       <Card style={{ width: '18rem' }}>
+//       <Card.Img variant="top" src={cult.url} />
+//       <Card.Body>
+//         <Card.Title>{cult.name}</Card.Title>
+//         <Card.Text>{cult.reason}</Card.Text>
+//         <p onClick={increment}>
+//           <span>👍</span>
+//           <span>{cult.vote || count}</span>
+//         </p>
+//         <a href={`/culture/${cult._id}`} className="btn btn-primary">Go somewhere</a>
+//       </Card.Body>
+//     </Card>
+//     </div>
+//   ))
+// }
 
   const loading = () => {
     return <h1>Loading...</h1>
