@@ -16,7 +16,6 @@ function RegisterForm({ updateMessage, handleRegisterOrLogin }) {
     function handleChange(e) {
         updateMessage("");
         setFormState((prevState) => ({
-            // Using ES2015 Computed Property Names
             ...prevState,
             [e.target.name]: e.target.value,
         }));
@@ -26,11 +25,9 @@ function RegisterForm({ updateMessage, handleRegisterOrLogin }) {
         e.preventDefault();
         try {
             await register(formState);
-            // Let <App> know a user has signed up!
             handleRegisterOrLogin();
             navigate("/", { replace: true });
         } catch (err) {
-            // Invalid user data (probably duplicate email)
             updateMessage(err.message);
         }
     }
@@ -83,7 +80,6 @@ function RegisterForm({ updateMessage, handleRegisterOrLogin }) {
                     />
                 </div>
                 <div className="mb-3">
-                    {/* <label>Password</label> */}
                     <input
                         type="password"
                         className="form-control"

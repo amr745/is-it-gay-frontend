@@ -13,10 +13,11 @@ function Index(props) {
   
   const loaded = () => {
     return (
+      <div className="shadow-lg p-3 mb-5 bg-white rounded">
       <Container>
-            <Row>
+            <Row className="row">
                 {props.culture.map((cult) => (
-                    <Col key={cult._id} xs={12} md={4} lg={3}>
+                    <Col key={cult._id} md="12" lg="4" className="mb-4">
                         <Card style={{ width: '18rem' }}>
                             <Card.Img src={cult.url} />
                             <Card.Body>
@@ -33,6 +34,7 @@ function Index(props) {
                 ))}
             </Row>
         </Container>
+      </div>
     )
   }
       
