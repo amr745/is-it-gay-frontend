@@ -1,4 +1,5 @@
 import React from "react"
+import { Button } from "react-bootstrap";
 import { useParams, useNavigate } from "react-router-dom"
 
 function Show({culture, deleteCulture}) {
@@ -22,12 +23,12 @@ return (
       <img className="show-image" src={cult.url} alt={cult.name} />
       <h2>{cult.description}</h2>
       <h2>{cult.reason}</h2>
-      <button id="delete" onClick={removeCult}>
+      <Button variant="primary" id="delete" onClick={removeCult}>
         DELETE
-      </button>
-      <button id="update" onClick={updateCult}>
+      </Button>
+      <Button variant="primary" id="update" onClick={updateCult}>
         UPDATE
-      </button>
+      </Button>
     </div>
   )
 }
